@@ -45,20 +45,22 @@ $("#add-train").on("click",function(){
       var trainDest = childSnapshot.val().dest;
       var trainFreq = childSnapshot.val().freq;
       var trainFirstTime = childSnapshot.val().first;
+      console.log(trainFirstTime);
   //  convert the train time
       // var freq = parseInt(freq);
-      var currentTime = moment().format("MMMM Do YYYY, h:mm:ss a");
+      var currentTime = moment().format("MMMM Do YYYY, LT");
       console.log(currentTime);
 
       
-      var dateConverted = moment(childSnapshot.val().time, "HH:mm").subtract(1, "years");
-      var trainFirstTime = moment(dateConverted).format("HH:mm");
-      console.log(dateConverted);
+      var timeConverted = moment(childSnapshot.val().first, "LT").subtract(1, "years");
+
+      var trainFirstTime = moment(timeConverted).format("LT");
+      console.log(timeConverted);
 
       // difference between the times
-      var dateConverted=moment(trainFirstTime, "HH:mm").subtract(1,"years");
+      var timeConverted=moment(trainFirstTime, "LT").subtract(1,"years");
 
-      var tDifference = moment().diff(moment(dateConverted), "minutes");
+      var tDifference = moment().diff(moment(timeConverted), "minutes");
       console.log(tDifference);
 
       // remainder
@@ -71,13 +73,13 @@ $("#add-train").on("click",function(){
       console.log(nextTrain);
 
       // adding to the table
-      $("#currentTime").text(currentTime);
+      $("#currentTime").text("Current Time: " + currentTime);
       // Create the new row
       $("#train-details").append(
         "<tr><td id='nameDisplay'>" + childSnapshot.val().name +
         "</td><td id='destDisplay'>" + childSnapshot.val().dest +
         "</td><td id='freqDisplay'>" + childSnapshot.val().freq +
-        "</td><td id='nextDisplay'>" + moment(nextTrain).format("HH:mm") +
+        "</td><td id='nextDisplay'>" + moment(nextTrain).format("LT") +
         "</td><td id='awayDisplay'>" + minsAway  + "</td></tr>");
     }, function (errorObject) {
       console.log("The read failed: " + errorObject.code);
