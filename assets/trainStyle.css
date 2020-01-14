@@ -1,3 +1,6 @@
+.jumbotron jumbotron-fluid{
+    background-color: salmon;
+}
 #jumbotron jumbotron-fluid {
-    background-color: blueviolet;
+    background-color: red;
 }
