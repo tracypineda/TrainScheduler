@@ -1,9 +1,5 @@
-# train
-https://tracypineda.github.io/train/
-
-
-
 # Train Schedule
+https://tracypineda.github.io/train/
 
 This project shows the most up-to-date train information and scheduling for the fictional "Train Schedule". Users have the ability to add information on a new train and can check the status of the existing trains on the site.
 
