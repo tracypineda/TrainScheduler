@@ -9,7 +9,7 @@ Browse the site for existing train information. If you do not see a train and ha
 
 ## Built With
 
-* jQuery
+* [jQuery](https://jquery.com/)
 * [Firebase](https://firebase.google.com/)
 * [Moment.js](https://momentjs.com/)
 * [Bootstrap](https://getbootstrap.com/)
